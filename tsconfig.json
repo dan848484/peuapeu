@@ -1,0 +1,9 @@
+{
+    // "include":["src/**/*"],
+    "compilerOptions": {
+        "target": "es5",
+        "sourceMap": true,
+        "allowJs": true,
+        "jsx": "react",            
+    }
+}

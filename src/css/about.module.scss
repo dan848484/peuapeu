@@ -1,0 +1,39 @@
+.container {
+  background-color: #f2f2f2;
+  width: 100vw;
+  height: 800px;
+  padding-top: 80px;
+}
+
+.img {
+  width: 90vw;
+  height: 230px;
+  background-image: url("../img/store2.png");
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+}
+
+.introductionContainer {
+  background-color: #f2f2f2;
+  width: 81vw;
+  margin: 0 auto;
+  // border: 1px solid blue;
+  height: 400px;
+  position: relative;
+  bottom: 50px;
+  padding: 30px 20px 0 20px;
+}
+
+.introductionContainer > p {
+  font-size: 17px;
+  letter-spacing: 1.5px;
+}
+
+.introductionContainer > p:first-of-type {
+  margin-top: 45px;
+}
+
+.introductionContainer > p:last-of-type {
+  margin-top: 50px;
+}

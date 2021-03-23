@@ -1,0 +1,32 @@
+.container {
+  background-color: white;
+  padding: 80px 30px 100px 30px;
+}
+
+.introduction {
+  color: #343434;
+  margin-top: 40px;
+}
+
+.paymentTable {
+  font-family: "Noto Sans JP", Arial;
+  color: #434343;
+  margin-top: 60px;
+  text-align: left;
+}
+
+.paymentTable > tr > td:first-of-type {
+  width: 100px;
+}
+
+.icon {
+  height: 26px;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.applepay {
+  width: 20px;
+  background-image: url("../img/payments//applepay.png");
+}

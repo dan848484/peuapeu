@@ -1,0 +1,19 @@
+.container {
+  background-color: #262626;
+  text-align: center;
+  padding: 0px 0px 50px 0px;
+}
+
+.logo {
+  margin: 0 auto;
+  width: 180px;
+  height: 120px;
+  background-image: url("../img/logoWhite.png");
+  background-size: cover;
+}
+
+.container p {
+  color: white;
+  margin: 0 auto;
+  font-size: 12px;
+}

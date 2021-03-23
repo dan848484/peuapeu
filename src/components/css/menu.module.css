@@ -1,0 +1,142 @@
+h3 {
+  height: 27px;
+  background-size: cover;
+  margin-top: 10px;
+}
+
+.cutBackground {
+  width: 42px;
+  background-image: url("../../img/cut.png");
+}
+
+.colorBackground {
+  width: 63px;
+  background-image: url("../../img/color.png");
+}
+
+.permBackground {
+  width: 57px;
+  background-image: url("../../img/perm.png");
+}
+
+.treatmentBackground {
+  width: 117px;
+  background-image: url("../../img/treatment.png");
+}
+
+.othersBackground {
+  width: 76px;
+  background-image: url("../../img/others.png");
+}
+
+.setBackground {
+  width: 36px;
+  background-image: url("../../img/Set.png");
+}
+
+.container {
+  margin-top: 50px;
+  position: relative;
+  width: 100%;
+
+  /* border: 1px dotted black; */
+}
+
+.table {
+  width: 85vw;
+  position: absolute;
+  right: 0px;
+}
+
+.keyName,
+.content,
+.option,
+.miniTitle {
+  color: #4a4a4a;
+}
+
+.option p {
+  margin-top: 5px;
+}
+
+.clickArea {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.plusIcon {
+  position: absolute;
+  right: 4px;
+  top: -7px;
+  font-size: 30px;
+}
+
+.iconOpen {
+  transform: rotate(45deg);
+}
+
+.contentsContainerDom {
+  max-height: 0px;
+  transition-duration: 0.1s;
+  transition-property: all;
+}
+
+.contentsContainerDom_Opened {
+  max-height: 500px;
+  /* display: list-item; */
+}
+
+.contentsDom {
+  display: none;
+}
+
+.contentsDom_Opened {
+  animation: show 0.3s ease 0s;
+  display: block;
+}
+
+.contentsDom_Closed {
+  animation: out 0.3s ease 0s;
+  animation-fill-mode: forwards;
+}
+
+li {
+  list-style-type: none;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    display: block;
+  }
+}
+
+@keyframes out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.lines > span {
+  display: block;
+  width: 90%;
+  height: 0.1px;
+  background-color: rgba(17, 17, 17, 0.544);
+  margin-top: 3px;
+}
+
+.lines {
+  margin-top: 10px;
+}
+
+.miniTitle {
+  font-size: 10px;
+  margin-top: 20px;
+}

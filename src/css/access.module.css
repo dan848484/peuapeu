@@ -1,0 +1,23 @@
+.container {
+  background-color: #42526b;
+  padding: 80px 30px 100px 30px;
+}
+
+.miniTitle {
+  color: #cecbcb;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.contents {
+  color: white;
+  line-height: 50px;
+  font-size: 17px;
+}
+
+.map {
+  margin-top: 60px;
+  /* border: #bc5de9 solid 3px; */
+  width: 100%;
+  height: 250px;
+}

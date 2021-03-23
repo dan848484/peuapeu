@@ -1,0 +1,37 @@
+.title {
+  display: block;
+  background-repeat: no-repeat;
+
+  height: 43px;
+  background-size: cover;
+}
+
+.about {
+  width: 143px;
+  background-image: url("../../img/AboutUs.png");
+}
+
+.menus {
+  width: 107px;
+  background-image: url("../../img/Menus.png");
+}
+
+.access {
+  width: 106px;
+  background-image: url("../../img/access.png");
+}
+
+.prevention {
+  width: 259px;
+  background-image: url("../../img/VirusPrevention.png");
+}
+
+.payment {
+  width: 279px;
+  background-image: url("../../img/PaymentMethods.png");
+}
+
+.set {
+  width: 279px;
+  background-image: url("../../img/Set.png");
+}
