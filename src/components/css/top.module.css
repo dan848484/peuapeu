@@ -1,0 +1,141 @@
+.container {
+  border: 10px solid white;
+  background-color: gray;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.background {
+  /* animation: backgrounds 8s ease-in-out; */
+  animation-name: backgrounds;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  /* -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: backgrounds;
+  -webkit-animation-duration: 8s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 1s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-name: backgrounds;
+  -moz-animation-duration: 8s;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-delay: 1s;
+  background-image: url("../../img/top/store1.jpg"); */
+
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position-x: center;
+}
+.logo {
+  height: 70px;
+  /* margin: 0 auto; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.63);
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+.scroll {
+  /* display: block; */
+  transform: rotate(-90deg);
+  position: relative;
+  right: 50%;
+  bottom: 30px;
+  color: #fb291f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+}
+
+.line {
+  /* display:inline; */
+  margin-top: 15px;
+  width: 0.5px;
+  height: 55px;
+  background-color: #fb291f;
+}
+
+@keyframes backgrounds {
+  0% {
+    background-image: url("../../img/top/store1.jpg");
+  }
+
+  40% {
+    background-image: url("../../img/top/light.png");
+  }
+
+  60% {
+    background-image: url("../../img/top/bike.png");
+  }
+
+  80% {
+    background-image: url("../../img/top/grass.png");
+  }
+
+  100% {
+    background-image: url("../../img/top/store1.jpg");
+  }
+}
+
+@-webkit-keyframes backgrounds {
+  0% {
+    background-image: url("../../img/top/store1.jpg");
+  }
+
+  40% {
+    background-image: url("../../img/top/light.png");
+  }
+
+  60% {
+    background-image: url("../../img/top/bike.png");
+  }
+
+  80% {
+    background-image: url("../../img/top/grass.png");
+  }
+
+  100% {
+    background-image: url("../../img/top/store1.jpg");
+  }
+}
+
+@-moz-keyframes backgrounds {
+  0% {
+    background-image: url("../../img/top/store1.jpg");
+  }
+
+  40% {
+    background-image: url("../../img/top/light.png");
+  }
+
+  60% {
+    background-image: url("../../img/top/bike.png");
+  }
+
+  80% {
+    background-image: url("../../img/top/grass.png");
+  }
+
+  100% {
+    background-image: url("../../img/top/store1.jpg");
+  }
+}

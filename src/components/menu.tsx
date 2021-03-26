@@ -125,9 +125,11 @@ export class Menu extends React.Component<
           } else {
             return (
               <tr key={index}>
-                <div className={styles.miniTitle}>
-                  {this.props.datail[index].key}{" "}
-                </div>
+                <td>
+                  <div className={styles.miniTitle}>
+                    {this.props.datail[index].key}{" "}
+                  </div>
+                </td>
               </tr>
             );
           }

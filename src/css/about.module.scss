@@ -12,6 +12,9 @@
   margin: 0 auto;
   background-size: cover;
   background-position: center;
+  // @media screen and (min-width: 430px) {
+  //   height: 300px;
+  // }
 }
 
 .introductionContainer {
@@ -36,4 +39,19 @@
 
 .introductionContainer > p:last-of-type {
   margin-top: 50px;
+}
+
+@media screen and (min-width: 430px) {
+  .img {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 570px) {
+  .img {
+    height: 350px;
+  }
+  .introductionContainer {
+    bottom: 90px;
+  }
 }

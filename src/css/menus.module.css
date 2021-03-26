@@ -4,3 +4,11 @@
 
   padding: 80px 20px 100px 30px;
 }
+@media screen and (min-width: 560px) {
+  .inside {
+    width: 500px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
