@@ -1,62 +1,100 @@
 import * as React from "react";
 import * as topStyles from "../components/css/top.module.css";
 import logo from "../img/logo.png";
+import { graphql, useStaticQuery } from "gatsby";
+
+interface TopPropsInterface {
+  result: {
+    edges: {
+      node: {
+        name: string;
+        publicURL: string;
+      };
+    }[];
+  };
+}
 
 interface TopStateInterface {
   index: number;
-  class: string;
 }
 
-export class Top extends React.Component<{}, TopStateInterface> {
-  backgrounds: string[] = [];
-  backgroundElement = React.createRef();
-  constructor(props: {}) {
-    super(props);
-    this.backgrounds = [
-      topStyles.back_store,
-      topStyles.back_light,
-      topStyles.back_bike,
-      topStyles.back_grass,
-    ];
+export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
+  backgroundURL: string[];
+  elements = [
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+    React.createRef(),
+  ];
 
-    this.state = { index: null, class: topStyles.background };
-    setTimeout(this.changeBackground.bind(this), 100);
+  interval: NodeJS.Timeout = null;
+  constructor(props: TopPropsInterface) {
+    super(props);
+    this.backgroundURL = this.props.result.edges.map((element) => {
+      return element.node.publicURL;
+    });
+    this.state = { index: null };
+    // setTimeout(this.changeBackground.bind(this), 100);
   }
 
   componentDidMount(): void {
-    setInterval(this.changeBackground.bind(this), 2000);
+    this.interval = setInterval(this.changeBackground.bind(this), 2000);
+  }
+  componentWillUnmount(): void {
+    clearInterval(this.interval);
   }
 
   private changeBackground(): void {
-    console.log("背景変更");
     if (this.state.index == null) {
       this.setState({ index: 0 });
     } else if (this.state.index == 4) {
       this.setState({ index: 0 });
     }
 
+    if (this.elements == undefined) {
+      return;
+    }
     switch (this.state.index) {
       case 0:
-        this.setState({
-          class: topStyles.background + " " + topStyles.back_store,
-        });
+        this.elements[0].current.className =
+          topStyles.back +
+          " " +
+          topStyles.back_store +
+          " " +
+          topStyles.outAnimation;
 
         break;
       case 1:
-        this.setState({
-          class: topStyles.background + " " + topStyles.back_light,
-        });
+        this.elements[1].current.className =
+          topStyles.back +
+          " " +
+          topStyles.back_light +
+          " " +
+          topStyles.outAnimation;
 
         break;
       case 2:
-        this.setState({
-          class: topStyles.background + " " + topStyles.back_bike,
-        });
+        this.elements[2].current.className =
+          topStyles.back +
+          " " +
+          topStyles.back_bike +
+          " " +
+          topStyles.outAnimation;
+
         break;
       default:
-        this.setState({
-          class: topStyles.background + " " + topStyles.back_grass,
-        });
+        this.elements[3].current.className =
+          topStyles.back +
+          " " +
+          topStyles.back_grass +
+          " " +
+          topStyles.outAnimation;
+        setTimeout(() => {
+          this.elements.map((element) => {
+            element.current.classList.remove(topStyles.outAnimation);
+            console.log(this.elements);
+          });
+        }, 550);
         break;
     }
 
@@ -66,10 +104,25 @@ export class Top extends React.Component<{}, TopStateInterface> {
   render() {
     return (
       <section className={topStyles.container}>
-        <div ref={this.backgroundElement} className={this.state.class}>
-          <div className={topStyles.mask}>
-            <img src={logo} className={topStyles.logo} alt="" />
-          </div>
+        <div className={topStyles.back + " " + topStyles.back_store} />
+        <div
+          className={topStyles.back + " " + topStyles.back_grass}
+          ref={this.elements[3]}
+        />
+        <div
+          className={topStyles.back + " " + topStyles.back_bike}
+          ref={this.elements[2]}
+        />
+        <div
+          className={topStyles.back + " " + topStyles.back_light}
+          ref={this.elements[1]}
+        />
+        <div
+          className={topStyles.back + " " + topStyles.back_store}
+          ref={this.elements[0]}
+        />
+        <div className={topStyles.mask}>
+          <img src={logo} className={topStyles.logo} alt="" />
         </div>
 
         <div className={topStyles.arrow}>

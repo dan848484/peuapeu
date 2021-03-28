@@ -9,6 +9,13 @@ module.exports = {
                 path: `${__dirname}/src/img/payments/`
             }
         },
+        {
+            resolve: "gatsby-source-filesystem",
+            options:{
+                name:"background",
+                path: `${__dirname}/src/img/top/`
+            }
+        },
 
 
     ]

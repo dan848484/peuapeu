@@ -15,7 +15,15 @@ import { Top } from "../components/top";
 
 interface PropsInterface {
   data: {
-    allFile: {
+    img: {
+      edges: {
+        node: {
+          name: string;
+          publicURL: string;
+        };
+      }[];
+    };
+    background: {
       edges: {
         node: {
           name: string;
@@ -28,7 +36,16 @@ interface PropsInterface {
 
 export const query = graphql`
   {
-    allFile(filter: { sourceInstanceName: { eq: "img" } }) {
+    img: allFile(filter: { sourceInstanceName: { eq: "img" } }) {
+      edges {
+        node {
+          name
+          publicURL
+        }
+      }
+    }
+
+    background: allFile(filter: { sourceInstanceName: { eq: "background" } }) {
       edges {
         node {
           name
@@ -42,13 +59,15 @@ export const query = graphql`
 export default class Index extends React.Component<PropsInterface, {}> {
   constructor(props: PropsInterface) {
     super(props);
+
+    console.log(this.props.data);
   }
 
   private getPaymentJSXElement(
     paymentName: string,
     fileName: string
   ): JSX.Element {
-    const path = this.props.data.allFile.edges.find((element) => {
+    const path = this.props.data.img.edges.find((element) => {
       return element.node.name == fileName;
     });
     if (path != undefined) {
@@ -82,7 +101,7 @@ export default class Index extends React.Component<PropsInterface, {}> {
             rel="stylesheet"
           ></link>
         </Helmet>
-        <Top />
+        <Top result={this.props.data.background} />
         <section className={aboutStyles.container}>
           <div className={aboutStyles.img}></div>
           <div className={aboutStyles.introductionContainer}>
@@ -228,7 +247,7 @@ export default class Index extends React.Component<PropsInterface, {}> {
           </p>
           <img
             src={
-              this.props.data.allFile.edges.find((element) => {
+              this.props.data.img.edges.find((element) => {
                 return element.node.name == "transportation";
               }).node.publicURL
             }
