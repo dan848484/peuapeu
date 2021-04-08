@@ -1,5 +1,5 @@
 .container {
-  border: 10px solid white;
+  border: 15px solid white;
   background-color: gray;
   box-sizing: border-box;
   width: 100vw;
@@ -91,4 +91,19 @@
   animation-name: fadeOut;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
+}
+
+@media screen and (min-width: 560px) {
+  .logo {
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .logo {
+    height: 100px;
+  }
+  .arrow {
+    zoom: 1.5;
+  }
 }

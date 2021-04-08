@@ -34,11 +34,10 @@ export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
       return element.node.publicURL;
     });
     this.state = { index: null };
-    // setTimeout(this.changeBackground.bind(this), 100);
   }
 
   componentDidMount(): void {
-    this.interval = setInterval(this.changeBackground.bind(this), 2000);
+    this.interval = setInterval(this.changeBackground.bind(this), 1500);
   }
   componentWillUnmount(): void {
     clearInterval(this.interval);
@@ -92,7 +91,6 @@ export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
         setTimeout(() => {
           this.elements.map((element) => {
             element.current.classList.remove(topStyles.outAnimation);
-            console.log(this.elements);
           });
         }, 550);
         break;

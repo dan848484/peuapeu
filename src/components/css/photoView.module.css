@@ -1,0 +1,58 @@
+.container {
+  overflow: hidden;
+  width: 90vw;
+  height: 90vw;
+  margin-top: 50px;
+  background-color: #f2f2f2;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  right: 34px;
+}
+
+.subContainer {
+  display: flex;
+  width: 90vw;
+  height: 90vw;
+  animation-name: slide;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  position: relative;
+  animation-timing-function: linear;
+  background-color: #f2f2f2;
+}
+
+@keyframes slide {
+  from {
+    right: 0px;
+  }
+  to {
+    right: calc(90vw * 2);
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .container,
+  .subContainer {
+    width: 405px;
+    height: 405px;
+  }
+  .container {
+    left: 10px;
+  }
+
+  @keyframes slide {
+    from {
+      right: 0px;
+    }
+    to {
+      right: calc(405px * 2);
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    top: 50px;
+  }
+}

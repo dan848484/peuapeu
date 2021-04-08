@@ -12,6 +12,13 @@ module.exports = {
         {
             resolve: "gatsby-source-filesystem",
             options:{
+                name:"photoview",
+                path: `${__dirname}/src/img/photoview/`
+            }
+        },
+        {
+            resolve: "gatsby-source-filesystem",
+            options:{
                 name:"background",
                 path: `${__dirname}/src/img/top/`
             }

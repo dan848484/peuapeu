@@ -127,7 +127,7 @@ li {
 .lines > span {
   display: block;
   width: 90%;
-  height: 0.1px;
+  height: 1px;
   background-color: rgba(17, 17, 17, 0.544);
   margin-top: 3px;
 }
@@ -144,5 +144,16 @@ li {
   .table {
     position: relative;
     width: 500px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .keyName,
+  .content {
+    font-size: 20px;
+  }
+  .contentsContainerDom_Opened {
+    max-height: 600px;
+    /* display: list-item; */
   }
 }

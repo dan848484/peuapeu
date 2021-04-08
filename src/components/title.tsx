@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as styles from "./css/title.module.css";
+import { miniTitle } from "../css/about.module.scss";
 
 export enum Titles {
   ABOUT,
@@ -33,7 +34,7 @@ export class Title extends React.Component<TitleInterface, {}> {
         break;
 
       case Titles.ACCESS:
-        css = styles.access;
+        css = styles.access + " " + miniTitle;
         titleAtribute = "Access";
         break;
 

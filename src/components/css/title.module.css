@@ -18,7 +18,7 @@
 
 .access {
   width: 106px;
-  background-image: url("../../img/access.png");
+  background-image: url("../../img/adress.png");
 }
 
 .prevention {
@@ -34,4 +34,39 @@
 .set {
   width: 279px;
   background-image: url("../../img/Set.png");
+}
+
+@media screen and (min-width: 700px) {
+  .title {
+    height: 83px;
+    margin: 0 auto;
+  }
+  .about {
+    width: 296px;
+  }
+  .access {
+    height: 36px;
+    width: 90px;
+  }
+
+  .menus {
+    width: 223px;
+  }
+
+  .prevention {
+    width: 540px;
+  }
+  .payment {
+    width: 581px;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .access {
+    margin-left: 0;
+  }
+  .about {
+    position: relative;
+    left: -25px;
+  }
 }

@@ -8,15 +8,24 @@
   margin-top: 40px;
 }
 
-.paymentTable {
+.paymentTable,
+.paymentTablePc {
   font-family: "Noto Sans JP", Arial;
   color: #434343;
   margin-top: 60px;
   text-align: left;
+  display: table;
 }
 
-.paymentTable > tr > td:first-of-type {
+.paymentTable > .tableRow > td:first-of-type {
   width: 100px;
+}
+
+.tableRow {
+  display: table-row;
+}
+.tableData {
+  display: table-cell;
 }
 
 .icon {
@@ -38,4 +47,46 @@
   margin-top: 30px;
   margin-bottom: 15px;
   font-family: "Noto Sans JP", Arial;
+}
+
+.paymentTablePc {
+  display: none;
+}
+
+@media screen and (min-width: 550px) {
+  .paymentTable {
+    display: none;
+  }
+
+  .paymentTablePc {
+    display: flex;
+
+    width: 400px;
+  }
+  .tableDataPc {
+    width: 200px;
+  }
+
+  .tableDataPc:last-child {
+    margin-left: 60px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .paymentTablePc {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .introduction {
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+  }
+  .transContainer {
+    margin-right: auto;
+    margin-left: auto;
+    width: 400px;
+  }
 }
