@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://peuapeu/./src/pages/index.tsx"],"names":["Index","React"],"mappings":"gKAGqBA,E,2FAAcC","file":"component---src-pages-index-tsx-8894b9e79aa89d561bab.js","sourcesContent":["import React from \"react\";\nimport ReactDom from \"react-dom\";\n\nexport default class Index extends React.Component<{}, {}> {}\n"],"sourceRoot":""}
