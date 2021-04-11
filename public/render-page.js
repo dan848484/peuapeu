@@ -2618,6 +2618,29 @@ const logo = "footer-module--logo--1C4tZ";
 
 /***/ }),
 
+/***/ "./src/css/loading.module.css":
+/*!************************************!*\
+  !*** ./src/css/loading.module.css ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "container": () => (/* binding */ container),
+/* harmony export */   "close": () => (/* binding */ close),
+/* harmony export */   "out": () => (/* binding */ out),
+/* harmony export */   "logoContainer": () => (/* binding */ logoContainer)
+/* harmony export */ });
+// Exports
+const container = "loading-module--container--2N8Cl";
+const close = "loading-module--close--12PQ2";
+const out = "loading-module--out--3IcCg";
+const logoContainer = "loading-module--logoContainer--2TNnd";
+
+
+/***/ }),
+
 /***/ "./src/css/menus.module.css":
 /*!**********************************!*\
   !*** ./src/css/menus.module.css ***!
@@ -3981,17 +4004,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _reset_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reset.css */ "./src/pages/reset.css");
 /* harmony import */ var _reset_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_reset_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/about.module.scss */ "./src/css/about.module.scss");
-/* harmony import */ var _css_menus_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/menus.module.css */ "./src/css/menus.module.css");
-/* harmony import */ var _css_prevention_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/prevention.module.css */ "./src/css/prevention.module.css");
-/* harmony import */ var _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/payment.module.css */ "./src/css/payment.module.css");
-/* harmony import */ var _css_footer_module_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/footer.module.css */ "./src/css/footer.module.css");
-/* harmony import */ var _img_prevention_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/prevention.png */ "./src/img/prevention.png");
-/* harmony import */ var _components_title__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/title */ "./src/components/title.tsx");
-/* harmony import */ var _components_menu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/menu */ "./src/components/menu.tsx");
-/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
-/* harmony import */ var _components_top__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/top */ "./src/components/top.tsx");
-/* harmony import */ var _components_photoView__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/photoView */ "./src/components/photoView.tsx");
+/* harmony import */ var _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/loading.module.css */ "./src/css/loading.module.css");
+/* harmony import */ var _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/about.module.scss */ "./src/css/about.module.scss");
+/* harmony import */ var _css_menus_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/menus.module.css */ "./src/css/menus.module.css");
+/* harmony import */ var _css_prevention_module_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/prevention.module.css */ "./src/css/prevention.module.css");
+/* harmony import */ var _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/payment.module.css */ "./src/css/payment.module.css");
+/* harmony import */ var _css_footer_module_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/footer.module.css */ "./src/css/footer.module.css");
+/* harmony import */ var _img_prevention_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/prevention.png */ "./src/img/prevention.png");
+/* harmony import */ var _components_title__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/title */ "./src/components/title.tsx");
+/* harmony import */ var _components_menu__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/menu */ "./src/components/menu.tsx");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-helmet */ "./node_modules/react-helmet/es/Helmet.js");
+/* harmony import */ var _components_top__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/top */ "./src/components/top.tsx");
+/* harmony import */ var _components_photoView__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/photoView */ "./src/components/photoView.tsx");
+
 
 
 
@@ -4020,73 +4045,74 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
 
     if (path != undefined) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.tableRow
+        className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.tableRow
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.tableData
+        className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.tableData
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-        className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.icon,
+        className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.icon,
         src: path.node.publicURL,
         alt: fileName
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.paymentName + " " + _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.tableData
+        className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.paymentName + " " + _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.tableData
       }, paymentName));
     } else {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Faild to create Element.(", paymentName, ")");
     }
   }
 
+  componentDidMount() {
+    this.loading.current.className = _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.container + " " + _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.close;
+  }
+
   render() {
-    // if (window != undefined) {
-    //   window.onload = () => {
-    //     this.loading.current.style.display = "none";
-    //     // alert(this.loading.current.style.display);
-    //   };
-    // }
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      "data-scroll": true
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_10__.Helmet, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("script", {
+      className: _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.container,
+      ref: this.loading
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.logoContainer
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_11__.Helmet, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("script", {
       src: "https://kit.fontawesome.com/6a5025b9a2.js",
       crossorigin: "anonymous"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("link", {
       href: "https://fonts.googleapis.com/css?family=Noto+Sans+JP",
       rel: "stylesheet"
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_top__WEBPACK_IMPORTED_MODULE_11__.Top, {
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_top__WEBPACK_IMPORTED_MODULE_12__.Top, {
       result: this.props.data.background
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__.container
+      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__.container
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__.img
+      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__.img
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__.tableContainer
+      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__.tableContainer
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__.rowContainer
+      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__.rowContainer
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__.introductionContainer
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_title__WEBPACK_IMPORTED_MODULE_8__.Title, {
-      title: _components_title__WEBPACK_IMPORTED_MODULE_8__.Titles.ABOUT
+      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__.introductionContainer
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_title__WEBPACK_IMPORTED_MODULE_9__.Title, {
+      title: _components_title__WEBPACK_IMPORTED_MODULE_9__.Titles.ABOUT
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "PeuaPeu means \u201Clittle by little\u201D in French.We have been improving little by little."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "And, we want you to have a more fulfilling time and be happy.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "This is why we create hair style.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__.adressContainer
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_title__WEBPACK_IMPORTED_MODULE_8__.Title, {
-      title: _components_title__WEBPACK_IMPORTED_MODULE_8__.Titles.ACCESS
+      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__.adressContainer
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_title__WEBPACK_IMPORTED_MODULE_9__.Title, {
+      title: _components_title__WEBPACK_IMPORTED_MODULE_9__.Titles.ACCESS
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__.number
+      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__.number
     }, "0766-28-4679"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__.adress
+      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__.adress
     }, "\u5BCC\u5C71\u770C\u9AD8\u5CA1\u5E02\u4E0A\u9ED2\u7530381-82"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__.button,
+      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__.button,
       href: "https://www.google.com/maps/place/%E3%80%92933-0854+%E5%AF%8C%E5%B1%B1%E7%9C%8C%E9%AB%98%E5%B2%A1%E5%B8%82%E9%BB%92%E7%94%B0%E6%96%B0%E7%94%BA%EF%BC%93%EF%BC%98%EF%BC%91%E2%88%92%EF%BC%98%EF%BC%92+%E3%83%97%E3%83%BC+%E3%82%A2+%E3%83%97%E3%83%BC/@36.721289,137.004644,19z/data=!4m2!3m1!1s0x5ff782fff52aa87b:0x69128d09f7c3c94?hl=ja&gl=JP"
     }, "Open with GoogleMap \u2192"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__.rowContainer
+      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__.rowContainer
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_2__.photoContainer
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_photoView__WEBPACK_IMPORTED_MODULE_12__.PhotoView, null))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-      className: _css_menus_module_css__WEBPACK_IMPORTED_MODULE_3__.container
+      className: _css_about_module_scss__WEBPACK_IMPORTED_MODULE_3__.photoContainer
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_photoView__WEBPACK_IMPORTED_MODULE_13__.PhotoView, null))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+      className: _css_menus_module_css__WEBPACK_IMPORTED_MODULE_4__.container
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_menus_module_css__WEBPACK_IMPORTED_MODULE_3__.inside
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_title__WEBPACK_IMPORTED_MODULE_8__.Title, {
-      title: _components_title__WEBPACK_IMPORTED_MODULE_8__.Titles.MENUS
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_9__.Menu, {
-      titile: _components_menu__WEBPACK_IMPORTED_MODULE_9__.MenuTitles.CUT,
+      className: _css_menus_module_css__WEBPACK_IMPORTED_MODULE_4__.inside
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_title__WEBPACK_IMPORTED_MODULE_9__.Title, {
+      title: _components_title__WEBPACK_IMPORTED_MODULE_9__.Titles.MENUS
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_10__.Menu, {
+      titile: _components_menu__WEBPACK_IMPORTED_MODULE_10__.MenuTitles.CUT,
       datail: [{
         key: "大人",
         price: 4400,
@@ -4108,8 +4134,8 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         price: 800,
         limit: true
       }]
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_9__.Menu, {
-      titile: _components_menu__WEBPACK_IMPORTED_MODULE_9__.MenuTitles.COLOR,
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_10__.Menu, {
+      titile: _components_menu__WEBPACK_IMPORTED_MODULE_10__.MenuTitles.COLOR,
       datail: [{
         key: "※すべてカット込みの値段です",
         header: true
@@ -4142,8 +4168,8 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         price: 6300,
         limit: true
       }]
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_9__.Menu, {
-      titile: _components_menu__WEBPACK_IMPORTED_MODULE_9__.MenuTitles.PERM,
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_10__.Menu, {
+      titile: _components_menu__WEBPACK_IMPORTED_MODULE_10__.MenuTitles.PERM,
       datail: [{
         key: "パーマ",
         price: 9500,
@@ -4161,8 +4187,8 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         price: 15500,
         limit: true
       }]
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_9__.Menu, {
-      titile: _components_menu__WEBPACK_IMPORTED_MODULE_9__.MenuTitles.TREATMENT,
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_10__.Menu, {
+      titile: _components_menu__WEBPACK_IMPORTED_MODULE_10__.MenuTitles.TREATMENT,
       datail: [{
         key: "トリートメント",
         header: true
@@ -4220,8 +4246,8 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         price: 8000,
         limit: true
       }]
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_9__.Menu, {
-      titile: _components_menu__WEBPACK_IMPORTED_MODULE_9__.MenuTitles.SET,
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_menu__WEBPACK_IMPORTED_MODULE_10__.Menu, {
+      titile: _components_menu__WEBPACK_IMPORTED_MODULE_10__.MenuTitles.SET,
       datail: [{
         key: "セット",
         price: 4200,
@@ -4240,43 +4266,43 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         limit: true
       }]
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-      className: _css_prevention_module_css__WEBPACK_IMPORTED_MODULE_4__.container
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_title__WEBPACK_IMPORTED_MODULE_8__.Title, {
-      title: _components_title__WEBPACK_IMPORTED_MODULE_8__.Titles.PREVENTION
+      className: _css_prevention_module_css__WEBPACK_IMPORTED_MODULE_5__.container
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_title__WEBPACK_IMPORTED_MODULE_9__.Title, {
+      title: _components_title__WEBPACK_IMPORTED_MODULE_9__.Titles.PREVENTION
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-      className: _css_prevention_module_css__WEBPACK_IMPORTED_MODULE_4__.content
+      className: _css_prevention_module_css__WEBPACK_IMPORTED_MODULE_5__.content
     }, "We countermeasure against covid-19."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: _img_prevention_png__WEBPACK_IMPORTED_MODULE_7__.default,
+      src: _img_prevention_png__WEBPACK_IMPORTED_MODULE_8__.default,
       alt: "Virus Prevention",
-      className: _css_prevention_module_css__WEBPACK_IMPORTED_MODULE_4__.img
+      className: _css_prevention_module_css__WEBPACK_IMPORTED_MODULE_5__.img
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.container
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_title__WEBPACK_IMPORTED_MODULE_8__.Title, {
-      title: _components_title__WEBPACK_IMPORTED_MODULE_8__.Titles.PAYMENT
+      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.container
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_title__WEBPACK_IMPORTED_MODULE_9__.Title, {
+      title: _components_title__WEBPACK_IMPORTED_MODULE_9__.Titles.PAYMENT
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.introduction
+      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.introduction
     }, "You can pay with these methods or cash."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.paymentTable
+      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.paymentTable
     }, [this.getPaymentJSXElement("Apple Pay", "Apple Pay"), this.getPaymentJSXElement("Visa", "visa"), this.getPaymentJSXElement("Master", "master"), this.getPaymentJSXElement("JCB", "jcb"), this.getPaymentJSXElement("Diners", "diners"), this.getPaymentJSXElement("AMEX", "amex"), this.getPaymentJSXElement("iD", "id"), this.getPaymentJSXElement("QUICKPay", "QuickPay"), this.getPaymentJSXElement("UnionPay", "UnionPay"), this.getPaymentJSXElement("AliPay", "AliPay"), this.getPaymentJSXElement("WeChat Pay", "WeChat Pay"), this.getPaymentJSXElement("d払い", "d払い"), this.getPaymentJSXElement("PayPay", "PayPay"), this.getPaymentJSXElement("LINE Pay", "LINE Pay"), this.getPaymentJSXElement("au Pay", "auPay")]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.paymentTablePc
+      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.paymentTablePc
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.tableDataPc
+      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.tableDataPc
     }, this.getPaymentJSXElement("Apple Pay", "Apple Pay"), this.getPaymentJSXElement("Master", "master"), this.getPaymentJSXElement("Diners", "diners"), this.getPaymentJSXElement("iD", "id"), this.getPaymentJSXElement("UnionPay", "UnionPay"), this.getPaymentJSXElement("WeChat Pay", "WeChat Pay"), this.getPaymentJSXElement("PayPay", "PayPay"), this.getPaymentJSXElement("au Pay", "auPay")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.tableDataPc
+      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.tableDataPc
     }, this.getPaymentJSXElement("Visa", "visa"), this.getPaymentJSXElement("JCB", "jcb"), this.getPaymentJSXElement("AMEX", "amex"), this.getPaymentJSXElement("QUICKPay", "QuickPay"), this.getPaymentJSXElement("AliPay", "AliPay"), this.getPaymentJSXElement("d払い", "d払い"), this.getPaymentJSXElement("LINE Pay", "LINE Pay"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.transContainer
+      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.transContainer
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.transTitle
+      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.transTitle
     }, "Prepaid transportation cards"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       src: this.props.data.img.edges.find(element => {
         return element.node.name == "transportation";
       }).node.publicURL,
-      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_5__.transImg,
+      className: _css_payment_module_css__WEBPACK_IMPORTED_MODULE_6__.transImg,
       alt: ""
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-      className: _css_footer_module_css__WEBPACK_IMPORTED_MODULE_6__.container
+      className: _css_footer_module_css__WEBPACK_IMPORTED_MODULE_7__.container
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _css_footer_module_css__WEBPACK_IMPORTED_MODULE_6__.logo
+      className: _css_footer_module_css__WEBPACK_IMPORTED_MODULE_7__.logo
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Copyright \xA9 PeuaPeu All Rights Reserved."))));
   }
 
@@ -15407,7 +15433,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/logo-1a979fc499bd301f741bc1703b2ef909.png");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/logo-f89a8aae1b07842ba9b4b489efc3bb5b.png");
 
 /***/ }),
 
@@ -15422,7 +15448,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/prevention-b9d621272e63996e2e1943b195158bd5.png");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/prevention-69fe7cbf2dd9827ce8e150f21e012dbe.png");
 
 /***/ }),
 
@@ -15433,7 +15459,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"data":{"allFile":{"edges":[{"node":{"name":"chandelier","publicURL":"/static/e7ce3267c8d7539dc705ce7fc62cec01/chandelier.png"}},{"node":{"name":"bottoles","publicURL":"/static/9019666e17d6cbfaa3c1e85b40877e6a/bottoles.png"}},{"node":{"name":"leaf","publicURL":"/static/b05eab0fe9c69e1c635168da78749665/leaf.png"}},{"node":{"name":"grass","publicURL":"/static/28e8f05f8dcaf7a0fea9c8fe015a0537/grass.png"}}]}}}');
+module.exports = JSON.parse('{"data":{"allFile":{"edges":[{"node":{"name":"bottoles","publicURL":"/static/f87757351459b5513b11a65b16d76c9b/bottoles.png"}},{"node":{"name":"chandelier","publicURL":"/static/e58e7110daf60a7c2bca6ea484fdbde6/chandelier.png"}},{"node":{"name":"leaf","publicURL":"/static/2a53a84a0a3fdc797fcd5a9eb3f98717/leaf.png"}},{"node":{"name":"grass","publicURL":"/static/075aff4be488e951f341db08070b2b42/grass.png"}}]}}}');
 
 /***/ }),
 

@@ -97,19 +97,18 @@ export default class Index extends React.Component<PropsInterface, {}> {
     }
   }
 
+  componentDidMount() {
+    this.loading.current.className =
+      loadingStyles.container + " " + loadingStyles.close;
+  }
+
   render() {
-    // if (window != undefined) {
-    //   window.onload = () => {
-    //     this.loading.current.style.display = "none";
-    //     // alert(this.loading.current.style.display);
-    //   };
-    // }
     return (
       <div>
-        {/* <div className={loadingStyles.container} ref={this.loading}>
-          laoding
-        </div> */}
-        <div data-scroll>
+        <div className={loadingStyles.container} ref={this.loading}>
+          <div className={loadingStyles.logoContainer}></div>
+        </div>
+        <div>
           <Helmet>
             <script
               src="https://kit.fontawesome.com/6a5025b9a2.js"

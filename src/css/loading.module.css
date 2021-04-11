@@ -1,9 +1,54 @@
 .container {
-  background-color: tomato;
-  width: 100vw;
-  height: 100vh;
+  background-color: white;
+  width: 200vw;
+  height: 200vh;
+  z-index: 1000;
+  /* display: block; */
+  margin: 0 auto;
+  border-radius: 50%;
+  position: fixed;
+  left: -50%;
+  top: -50%;
+  overflow: hidden;
+}
+
+.close {
+  animation-name: out;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.logoContainer {
+  width: 255.45px;
+  height: 70px;
+  background-image: url("../img/logo.png");
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1000;
+  right: 0;
+  bottom: 0;
+}
+
+@keyframes out {
+  from {
+    /* display: block; */
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    display: none;
+    z-index: -100;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .logoContainer {
+    width: 364.92px;
+    height: 100px;
+  }
 }
