@@ -68,14 +68,14 @@
 }
 
 .back_light {
-  background-image: url("../../img/top/light.png");
+  background-image: url("../../img/top/light.jpg");
 }
 
 .back_bike {
-  background-image: url("../../img/top/bike.png");
+  background-image: url("../../img/top/bike.jpg");
 }
 .back_grass {
-  background-image: url("../../img/top/grass.png");
+  background-image: url("../../img/top/grass.jpg");
 }
 
 @keyframes fadeOut {

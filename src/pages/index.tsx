@@ -7,7 +7,7 @@ import * as accessStyles from "../css/access.module.css";
 import * as preventionStyles from "../css/prevention.module.css";
 import * as paymentStyles from "../css/payment.module.css";
 import * as footerStyles from "../css/footer.module.css";
-import preventionImg from "../img/prevention.png";
+import preventionImg from "../img/prevention.jpg";
 import { Title, Titles } from "../components/title";
 import { MenuTitles, Menu } from "../components/menu";
 import { Helmet } from "react-helmet";
