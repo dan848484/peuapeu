@@ -4061,7 +4061,9 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   }
 
   componentDidMount() {
-    this.loading.current.className = _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.container + " " + _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.close;
+    window.onload = () => {
+      this.loading.current.className = _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.container + " " + _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.close;
+    };
   }
 
   render() {
