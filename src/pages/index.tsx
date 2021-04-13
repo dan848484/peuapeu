@@ -108,7 +108,9 @@ export default class Index extends React.Component<PropsInterface, {}> {
     return (
       <div>
         <div className={loadingStyles.container} ref={this.loading}>
-          <div className={loadingStyles.logoContainer}></div>
+          <div className={loadingStyles.logoContainer}>
+            <div className={loadingStyles.line}></div>
+          </div>
         </div>
         <div>
           <Helmet>
