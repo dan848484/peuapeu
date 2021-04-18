@@ -121,7 +121,7 @@ export default class Index extends React.Component<PropsInterface, {}> {
             loadingStyles.container + " " + loadingStyles.close;
         }
       }.bind(this),
-      3500
+      2800
     );
   }
 
