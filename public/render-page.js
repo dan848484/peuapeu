@@ -2575,6 +2575,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "line": () => (/* binding */ line),
 /* harmony export */   "draw": () => (/* binding */ draw),
 /* harmony export */   "back": () => (/* binding */ back),
+/* harmony export */   "back_anniversary": () => (/* binding */ back_anniversary),
 /* harmony export */   "back_store": () => (/* binding */ back_store),
 /* harmony export */   "back_light": () => (/* binding */ back_light),
 /* harmony export */   "back_bike": () => (/* binding */ back_bike),
@@ -2591,6 +2592,7 @@ const scroll = "top-module--scroll--1xDAW";
 const line = "top-module--line--2TaYm";
 const draw = "top-module--draw--33vNy";
 const back = "top-module--back--3KeN8";
+const back_anniversary = "top-module--back_anniversary--9ml5P";
 const back_store = "top-module--back_store--1oY6L";
 const back_light = "top-module--back_light--33RWK";
 const back_bike = "top-module--back_bike--3Xw2Q";
@@ -3898,7 +3900,7 @@ __webpack_require__.r(__webpack_exports__);
 class Top extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   constructor(props) {
     super(props);
-    this.elements = [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef()];
+    this.elements = [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef()];
     this.interval = null;
     this.backgroundURL = this.props.result.edges.map(element => {
       return element.node.publicURL;
@@ -3921,7 +3923,7 @@ class Top extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       this.setState({
         index: 0
       });
-    } else if (this.state.index == 4) {
+    } else if (this.state.index == 5) {
       this.setState({
         index: 0
       });
@@ -3933,19 +3935,23 @@ class Top extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
 
     switch (this.state.index) {
       case 0:
-        this.elements[0].current.className = _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_store + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.outAnimation;
+        this.elements[0].current.className = _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_anniversary + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.outAnimation;
         break;
 
       case 1:
-        this.elements[1].current.className = _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_light + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.outAnimation;
+        this.elements[1].current.className = _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_store + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.outAnimation;
         break;
 
       case 2:
-        this.elements[2].current.className = _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_bike + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.outAnimation;
+        this.elements[2].current.className = _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_light + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.outAnimation;
+        break;
+
+      case 3:
+        this.elements[3].current.className = _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_bike + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.outAnimation;
         break;
 
       default:
-        this.elements[3].current.className = _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_grass + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.outAnimation;
+        this.elements[4].current.className = _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_grass + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.outAnimation;
         setTimeout(() => {
           this.elements.map(element => {
             element.current.classList.remove(_components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.outAnimation);
@@ -3963,18 +3969,21 @@ class Top extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
       className: _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.container
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_store
+      className: _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_anniversary
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_grass,
-      ref: this.elements[3]
+      ref: this.elements[4]
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_bike,
-      ref: this.elements[2]
+      ref: this.elements[3]
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_light,
-      ref: this.elements[1]
+      ref: this.elements[2]
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_store,
+      ref: this.elements[1]
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back + " " + _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.back_anniversary,
       ref: this.elements[0]
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: _components_css_top_module_css__WEBPACK_IMPORTED_MODULE_1__.mask

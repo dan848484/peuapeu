@@ -90,6 +90,10 @@
   background-position: center;
 }
 
+.back_anniversary {
+  background-image: url("../../img/top/anniversary.jpg");
+}
+
 .back_store {
   background-image: url("../../img/top/store1.jpg");
 }

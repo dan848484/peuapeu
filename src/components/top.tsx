@@ -25,6 +25,7 @@ export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
     React.createRef(),
     React.createRef(),
     React.createRef(),
+    React.createRef(),
   ];
 
   interval: NodeJS.Timeout = null;
@@ -46,7 +47,7 @@ export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
   private changeBackground(): void {
     if (this.state.index == null) {
       this.setState({ index: 0 });
-    } else if (this.state.index == 4) {
+    } else if (this.state.index == 5) {
       this.setState({ index: 0 });
     }
 
@@ -58,16 +59,17 @@ export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
         this.elements[0].current.className =
           topStyles.back +
           " " +
-          topStyles.back_store +
+          topStyles.back_anniversary +
           " " +
           topStyles.outAnimation;
 
         break;
+
       case 1:
         this.elements[1].current.className =
           topStyles.back +
           " " +
-          topStyles.back_light +
+          topStyles.back_store +
           " " +
           topStyles.outAnimation;
 
@@ -76,13 +78,22 @@ export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
         this.elements[2].current.className =
           topStyles.back +
           " " +
+          topStyles.back_light +
+          " " +
+          topStyles.outAnimation;
+
+        break;
+      case 3:
+        this.elements[3].current.className =
+          topStyles.back +
+          " " +
           topStyles.back_bike +
           " " +
           topStyles.outAnimation;
 
         break;
       default:
-        this.elements[3].current.className =
+        this.elements[4].current.className =
           topStyles.back +
           " " +
           topStyles.back_grass +
@@ -102,21 +113,25 @@ export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
   render() {
     return (
       <section className={topStyles.container}>
-        <div className={topStyles.back + " " + topStyles.back_store} />
+        <div className={topStyles.back + " " + topStyles.back_anniversary} />
         <div
           className={topStyles.back + " " + topStyles.back_grass}
-          ref={this.elements[3]}
+          ref={this.elements[4]}
         />
         <div
           className={topStyles.back + " " + topStyles.back_bike}
-          ref={this.elements[2]}
+          ref={this.elements[3]}
         />
         <div
           className={topStyles.back + " " + topStyles.back_light}
-          ref={this.elements[1]}
+          ref={this.elements[2]}
         />
         <div
           className={topStyles.back + " " + topStyles.back_store}
+          ref={this.elements[1]}
+        />
+        <div
+          className={topStyles.back + " " + topStyles.back_anniversary}
           ref={this.elements[0]}
         />
         <div className={topStyles.mask}>
