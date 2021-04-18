@@ -60,10 +60,15 @@ export const query = graphql`
 
 export default class Index extends React.Component<PropsInterface, {}> {
   loading = React.createRef();
+
+  firstLoadTime: number;
+
   constructor(props: PropsInterface) {
     super(props);
 
     console.log(this.props.data);
+
+    this.firstLoadTime = new Date().getTime();
   }
 
   private getPaymentJSXElement(
@@ -105,6 +110,19 @@ export default class Index extends React.Component<PropsInterface, {}> {
         loadingStyles.container + " " + loadingStyles.close;
       // alert("loaded with new way!");
     });
+
+    setTimeout(
+      function () {
+        if (
+          this.loading.current.className !=
+          loadingStyles.container + " " + loadingStyles.close
+        ) {
+          this.loading.current.className =
+            loadingStyles.container + " " + loadingStyles.close;
+        }
+      }.bind(this),
+      5000
+    );
   }
 
   render() {

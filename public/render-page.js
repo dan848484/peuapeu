@@ -4051,6 +4051,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     super(props);
     this.loading = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createRef();
     console.log(this.props.data);
+    this.firstLoadTime = new Date().getTime();
   }
 
   getPaymentJSXElement(paymentName, fileName) {
@@ -4080,6 +4081,11 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     window.addEventListener("load", () => {
       this.loading.current.className = _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.container + " " + _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.close; // alert("loaded with new way!");
     });
+    setTimeout(function () {
+      if (this.loading.current.className != _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.container + " " + _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.close) {
+        _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.container + " " + _css_loading_module_css__WEBPACK_IMPORTED_MODULE_2__.close;
+      }
+    }.bind(this), 5000);
   }
 
   render() {
