@@ -98,10 +98,13 @@ export default class Index extends React.Component<PropsInterface, {}> {
   }
 
   componentDidMount() {
-    window.onload = () => {
+    console.log("componentDidMount!!!!");
+
+    window.addEventListener("load", () => {
       this.loading.current.className =
         loadingStyles.container + " " + loadingStyles.close;
-    };
+      // alert("loaded with new way!");
+    });
   }
 
   render() {
