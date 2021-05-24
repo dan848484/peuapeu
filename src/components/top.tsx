@@ -2,6 +2,8 @@ import * as React from "react";
 import * as topStyles from "../components/css/top.module.css";
 import logo from "../img/logo.png";
 import { graphql, useStaticQuery } from "gatsby";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface TopPropsInterface {
   result: {
@@ -35,10 +37,28 @@ export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
       return element.node.publicURL;
     });
     this.state = { index: null };
+
+    gsap.registerPlugin(ScrollTrigger);
   }
 
   componentDidMount(): void {
     this.interval = setInterval(this.changeBackground.bind(this), 1500);
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: `.${topStyles.container}`,
+          start: "top top",
+          scrub: true,
+          pin: true,
+          end: "+=400",
+        },
+      })
+      .to(`.${topStyles.back}`, {
+        scale: 2,
+        duration: 1,
+        ease: "Power4.out",
+      });
   }
   componentWillUnmount(): void {
     clearInterval(this.interval);

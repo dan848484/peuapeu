@@ -61,14 +61,10 @@ export const query = graphql`
 export default class Index extends React.Component<PropsInterface, {}> {
   loading = React.createRef();
 
-  firstLoadTime: number;
-
   constructor(props: PropsInterface) {
     super(props);
 
     console.log(this.props.data);
-
-    this.firstLoadTime = new Date().getTime();
   }
 
   private getPaymentJSXElement(
@@ -103,8 +99,6 @@ export default class Index extends React.Component<PropsInterface, {}> {
   }
 
   componentDidMount() {
-    console.log("componentDidMount!!!!");
-
     window.addEventListener("load", () => {
       this.loading.current.className =
         loadingStyles.container + " " + loadingStyles.close;
