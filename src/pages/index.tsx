@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./reset.css";
+import * as topStyles from "../components/css/top.module.css";
 import * as loadingStyles from "../css/loading.module.css";
 import * as aboutStyles from "../css/about.module.scss";
 import * as menusStyles from "../css/menus.module.css";
@@ -14,6 +15,8 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { Top } from "../components/top";
 import { PhotoView } from "../components/photoView";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface PropsInterface {
   data: {
@@ -26,6 +29,14 @@ interface PropsInterface {
       }[];
     };
     background: {
+      edges: {
+        node: {
+          name: string;
+          publicURL: string;
+        };
+      }[];
+    };
+    logo: {
       edges: {
         node: {
           name: string;
@@ -55,16 +66,31 @@ export const query = graphql`
         }
       }
     }
+    logo: allFile(filter: { sourceInstanceName: { eq: "logo" } }) {
+      edges {
+        node {
+          name
+          publicURL
+        }
+      }
+    }
   }
 `;
 
 export default class Index extends React.Component<PropsInterface, {}> {
-  loading = React.createRef();
+  isLoaded = false;
+  logo = "";
 
   constructor(props: PropsInterface) {
     super(props);
 
-    console.log(this.props.data);
+    //put logo URL into this.logo from graphQL result.
+    this.props.data.logo.edges.map((item) => {
+      if (item.node.name == "logo") {
+        this.logo = item.node.publicURL;
+        return;
+      }
+    });
   }
 
   private getPaymentJSXElement(
@@ -98,21 +124,32 @@ export default class Index extends React.Component<PropsInterface, {}> {
     }
   }
 
+  private closeLoadingView() {
+    gsap
+      .timeline()
+      .to(`.${loadingStyles.container} > img`, {
+        opacity: 1,
+        duration: 0.5,
+      })
+      .to(`.${loadingStyles.container}`, {
+        duration: 0.5,
+        opacity: 0,
+        display: "none",
+      });
+  }
+
   componentDidMount() {
+    gsap.registerPlugin(ScrollTrigger);
     window.addEventListener("load", () => {
-      this.loading.current.className =
-        loadingStyles.container + " " + loadingStyles.close;
-      // alert("loaded with new way!");
+      this.isLoaded = true;
+      this.closeLoadingView();
     });
 
     setTimeout(
       function () {
-        if (
-          this.loading.current.className !=
-          loadingStyles.container + " " + loadingStyles.close
-        ) {
-          this.loading.current.className =
-            loadingStyles.container + " " + loadingStyles.close;
+        if (!this.isLoaded) {
+          this.isLoaded = true;
+          this.closeLoadingView();
         }
       }.bind(this),
       2800
@@ -122,10 +159,8 @@ export default class Index extends React.Component<PropsInterface, {}> {
   render() {
     return (
       <div>
-        <div className={loadingStyles.container} ref={this.loading}>
-          <div className={loadingStyles.logoContainer}>
-            <div className={loadingStyles.line}></div>
-          </div>
+        <div className={loadingStyles.container}>
+          <img src={this.logo} alt="" />
         </div>
         <div>
           <Helmet>
