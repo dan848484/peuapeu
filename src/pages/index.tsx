@@ -164,10 +164,6 @@ export default class Index extends React.Component<PropsInterface, {}> {
         </div>
         <div>
           <Helmet>
-            <meta
-              name="google-site-verification"
-              content="j8uXVeWU4BDVsSEESX8hikeYheNHhGZrlLvpd4p3NRY"
-            />
             <script
               src="https://kit.fontawesome.com/6a5025b9a2.js"
               crossorigin="anonymous"
@@ -176,6 +172,10 @@ export default class Index extends React.Component<PropsInterface, {}> {
               href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
               rel="stylesheet"
             ></link>
+            <meta
+              name="google-site-verification"
+              content="j8uXVeWU4BDVsSEESX8hikeYheNHhGZrlLvpd4p3NRY"
+            />
           </Helmet>
 
           <Top result={this.props.data.background} />
