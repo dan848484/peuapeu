@@ -159,15 +159,18 @@ export default class Index extends React.Component<PropsInterface, {}> {
   render() {
     return (
       <div>
-        <meta
-          name="google-site-verification"
-          content="j8uXVeWU4BDVsSEESX8hikeYheNHhGZrlLvpd4p3NRY"
-        />
         <div className={loadingStyles.container}>
           <img src={this.logo} alt="" />
         </div>
         <div>
-          <Helmet>
+          <Helmet
+            meta={[
+              {
+                name: `google-site-verification`,
+                content: `j8uXVeWU4BDVsSEESX8hikeYheNHhGZrlLvpd4p3NRY`,
+              },
+            ]}
+          >
             <script
               src="https://kit.fontawesome.com/6a5025b9a2.js"
               crossorigin="anonymous"
