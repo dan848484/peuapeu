@@ -164,6 +164,10 @@ export default class Index extends React.Component<PropsInterface, {}> {
         </div>
         <div>
           <Helmet>
+            <meta
+              name="google-site-verification"
+              content="j8uXVeWU4BDVsSEESX8hikeYheNHhGZrlLvpd4p3NRY"
+            />
             <script
               src="https://kit.fontawesome.com/6a5025b9a2.js"
               crossorigin="anonymous"
