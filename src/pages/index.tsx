@@ -168,7 +168,6 @@ export default class Index extends React.Component<PropsInterface, {}> {
               {
                 name: `google-site-verification`,
                 content: `j8uXVeWU4BDVsSEESX8hikeYheNHhGZrlLvpd4p3NRY`,
-                title: "peu a peu",
               },
             ]}
           >
@@ -180,6 +179,7 @@ export default class Index extends React.Component<PropsInterface, {}> {
               href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
               rel="stylesheet"
             ></link>
+            <title>peu a peu</title>
           </Helmet>
 
           <Top result={this.props.data.background} />
