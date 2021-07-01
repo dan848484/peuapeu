@@ -168,6 +168,7 @@ export default class Index extends React.Component<PropsInterface, {}> {
               {
                 name: `google-site-verification`,
                 content: `j8uXVeWU4BDVsSEESX8hikeYheNHhGZrlLvpd4p3NRY`,
+                title: "peu a peu",
               },
             ]}
           >
