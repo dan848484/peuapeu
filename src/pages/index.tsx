@@ -17,6 +17,8 @@ import { Top } from "../components/top";
 import { PhotoView } from "../components/photoView";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ImageManager } from "../ImageManager";
+import { Image } from "../Image";
 
 interface PropsInterface {
   data: {
@@ -80,10 +82,10 @@ export const query = graphql`
 export default class Index extends React.Component<PropsInterface, {}> {
   isLoaded = false;
   logo = "";
-
+  private manager = new ImageManager();
+  private images: Image[] = [];
   constructor(props: PropsInterface) {
     super(props);
-
     //put logo URL into this.logo from graphQL result.
     this.props.data.logo.edges.map((item) => {
       if (item.node.name == "logo") {
@@ -138,7 +140,7 @@ export default class Index extends React.Component<PropsInterface, {}> {
       });
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     gsap.registerPlugin(ScrollTrigger);
     window.addEventListener("load", () => {
       this.isLoaded = true;
@@ -154,6 +156,11 @@ export default class Index extends React.Component<PropsInterface, {}> {
       }.bind(this),
       2800
     );
+
+    const images = await this.manager.getAllPhotoUrls();
+    if (images != []) {
+      this.images = images;
+    }
   }
 
   render() {
