@@ -4,6 +4,7 @@ import logo from "../img/logo.png";
 import { graphql, useStaticQuery } from "gatsby";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ImagesContext } from "../pages";
 
 interface TopPropsInterface {
   result: {
@@ -21,6 +22,7 @@ interface TopStateInterface {
 }
 
 export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
+  static contextType = ImagesContext;
   backgroundURL: string[];
   elements = [
     React.createRef(),
@@ -43,7 +45,6 @@ export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
 
   componentDidMount(): void {
     this.interval = setInterval(this.changeBackground.bind(this), 1500);
-
     gsap
       .timeline({
         scrollTrigger: {

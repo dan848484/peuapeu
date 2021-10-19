@@ -1,4 +1,4 @@
-export type Image = Record<
+export type Images = Record<
   string,
   {
     url: string;
