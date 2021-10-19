@@ -3,7 +3,7 @@ import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-id
 import { S3Client, ListObjectsCommand } from "@aws-sdk/client-s3";
 import { Images } from "./Image";
 
-type Pages = "top" | "about" | "menu" | "prevention" | "payment" | "footer";
+type Section = "top" | "about" | "menu" | "prevention" | "payment" | "footer";
 
 export class ImageManager {
   private s3: S3Client | null;
@@ -61,10 +61,10 @@ export class ImageManager {
     console.log(this.images);
   }
 
-  getImages(page: Pages): Images {
-    let images: Images = {};
+  getImages(section: Sections): Images {
+    const images: Images = {};
     let isPrevension = false;
-    if (page === "prevention") {
+    if (section === "prevention") {
       isPrevension = true;
     }
     for (let key in this.images) {
