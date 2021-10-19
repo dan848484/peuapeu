@@ -68,7 +68,7 @@ export class ImageManager {
       isPrevension = true;
     }
     for (let key in this.images) {
-      if (page === key.split("/")[1]) {
+      if (section === key.split("/")[1]) {
         images[key.split("/")[2]] = this.images[key];
       }
     }
