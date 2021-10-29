@@ -1,46 +1,21 @@
 import * as React from "react";
 import * as topStyles from "../components/css/top.module.css";
 import logo from "../img/logo.png";
-import { graphql, useStaticQuery } from "gatsby";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ImagesContext } from "../pages";
 
-interface TopPropsInterface {
-  result: {
-    edges: {
-      node: {
-        name: string;
-        publicURL: string;
-      };
-    }[];
-  };
-}
-
-interface TopStateInterface {
-  index: number;
-}
-
-export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
+export class Top extends React.Component<{}> {
   static contextType = ImagesContext;
-  backgroundURL: string[];
-  elements = [
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-    React.createRef(),
-  ];
+  //メモ：React.ContextTypeのジェネリクスにはReact.Context型をextendsしているようなものだけ入れることができて
+  // 　　 そのContextが扱っている値の型を算出するという型
+  //      極論、ImageManagerとだけ型に記しても大丈夫
+  declare context: React.ContextType<typeof ImagesContext>;
 
-  interval: NodeJS.Timeout = null;
-  constructor(props: TopPropsInterface) {
-    super(props);
-    this.backgroundURL = this.props.result.edges.map((element) => {
-      return element.node.publicURL;
-    });
-    this.state = { index: null };
+  constructor() {
+    super({});
+    this.context.get
 
-    gsap.registerPlugin(ScrollTrigger);
   }
 
   componentDidMount(): void {

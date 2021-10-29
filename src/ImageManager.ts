@@ -61,7 +61,10 @@ export class ImageManager {
     console.log(this.images);
   }
 
-  getImages(section: Sections): Images {
+  getImages(section: Sections): Images | NotLoadedError {
+    if (!this.alreadyLoaded) {
+      return new NotLoadedError("画像がロードされていません。");
+    }
     const images: Images = {};
     let isPrevension = false;
     if (section === "prevention") {
@@ -75,3 +78,5 @@ export class ImageManager {
     return images;
   }
 }
+
+class NotLoadedError extends Error {}

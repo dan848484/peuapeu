@@ -83,7 +83,9 @@ export const query = graphql`
   }
 `;
 
-export const ImagesContext = React.createContext("default");
+export const ImagesContext = React.createContext<ImageManager>(
+  new ImageManager()
+);
 
 export default class Index extends React.Component<
   PropsInterface,
