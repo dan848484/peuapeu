@@ -4,62 +4,33 @@ import * as styles from "./css/photoView.module.css";
 import * as childStyles from "./css/photoChild.module.css";
 import { useStaticQuery, graphql } from "gatsby";
 
-interface Query {
-  allFile: {
-    edges: {
-      node: {
-        name: string;
-        publicURL: string;
-      };
-    }[];
-  };
-}
+// interface Query {
+//   allFile: {
+//     edges: {
+//       node: {
+//         name: string;
+//         publicURL: string;
+//       };
+//     }[];
+//   };
+// }
 
 export function PhotoView(): React.ReactElement {
-  const data: Query = useStaticQuery(graphql`
-    {
-      allFile(filter: { sourceInstanceName: { eq: "photoview" } }) {
-        edges {
-          node {
-            name
-            publicURL
-          }
-        }
-      }
-    }
-  `);
-  let datas = data.allFile.edges;
-  console.log(datas);
-  return (
-    <div className={styles.container}>
-      <div className={styles.subContainer}>
-        <Page
-          images={{
-            first: datas[0].node.publicURL,
-            second: datas[1].node.publicURL,
-            third: datas[2].node.publicURL,
-            forth: datas[3].node.publicURL,
-          }}
-        />
-        <Page
-          images={{
-            first: datas[0].node.publicURL,
-            second: datas[1].node.publicURL,
-            third: datas[2].node.publicURL,
-            forth: datas[3].node.publicURL,
-          }}
-        />
-        <Page
-          images={{
-            first: datas[0].node.publicURL,
-            second: datas[1].node.publicURL,
-            third: datas[2].node.publicURL,
-            forth: datas[3].node.publicURL,
-          }}
-        />
-      </div>
-    </div>
-  );
+  // const data: Query = useStaticQuery(graphql`
+  //   {
+  //     allFile(filter: { sourceInstanceName: { eq: "photoview" } }) {
+  //       edges {
+  //         node {
+  //           name
+  //           publicURL
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+  // let datas = data.allFile.edges;
+  // console.log(datas);
+  return <div className={styles.container}>{/* 表示停止 */}</div>;
 }
 
 interface childPropsInterface {

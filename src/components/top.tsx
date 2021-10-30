@@ -7,19 +7,15 @@ import { ImagesContext } from "../pages";
 
 export class Top extends React.Component<{}> {
   static contextType = ImagesContext;
-  //メモ：React.ContextTypeのジェネリクスにはReact.Context型をextendsしているようなものだけ入れることができて
-  // 　　 そのContextが扱っている値の型を算出するという型
-  //      極論、ImageManagerとだけ型に記しても大丈夫
+
   declare context: React.ContextType<typeof ImagesContext>;
 
   constructor() {
     super({});
-    this.context.get
-
+    // this.context.get
   }
 
   componentDidMount(): void {
-    this.interval = setInterval(this.changeBackground.bind(this), 1500);
     gsap
       .timeline({
         scrollTrigger: {
@@ -36,109 +32,11 @@ export class Top extends React.Component<{}> {
         ease: "Power4.out",
       });
   }
-  componentWillUnmount(): void {
-    clearInterval(this.interval);
-  }
+  componentWillUnmount(): void {}
 
-  private changeBackground(): void {
-    if (this.state.index == null) {
-      this.setState({ index: 0 });
-    } else if (this.state.index == 5) {
-      this.setState({ index: 0 });
-    }
-
-    if (this.elements == undefined) {
-      return;
-    }
-    switch (this.state.index) {
-      case 0:
-        this.elements[0].current.className =
-          topStyles.back +
-          " " +
-          topStyles.back_anniversary +
-          " " +
-          topStyles.outAnimation;
-
-        break;
-
-      case 1:
-        this.elements[1].current.className =
-          topStyles.back +
-          " " +
-          topStyles.back_store +
-          " " +
-          topStyles.outAnimation;
-
-        break;
-      case 2:
-        this.elements[2].current.className =
-          topStyles.back +
-          " " +
-          topStyles.back_light +
-          " " +
-          topStyles.outAnimation;
-
-        break;
-      case 3:
-        this.elements[3].current.className =
-          topStyles.back +
-          " " +
-          topStyles.back_bike +
-          " " +
-          topStyles.outAnimation;
-
-        break;
-      default:
-        this.elements[4].current.className =
-          topStyles.back +
-          " " +
-          topStyles.back_grass +
-          " " +
-          topStyles.outAnimation;
-        setTimeout(() => {
-          this.elements.map((element) => {
-            element.current.classList.remove(topStyles.outAnimation);
-          });
-        }, 550);
-        break;
-    }
-
-    this.setState({ index: this.state.index + 1 });
-  }
+  private changeBackground(): void {}
 
   render() {
-    return (
-      <section className={topStyles.container}>
-        <div className={topStyles.back + " " + topStyles.back_anniversary} />
-        <div
-          className={topStyles.back + " " + topStyles.back_grass}
-          ref={this.elements[4]}
-        />
-        <div
-          className={topStyles.back + " " + topStyles.back_bike}
-          ref={this.elements[3]}
-        />
-        <div
-          className={topStyles.back + " " + topStyles.back_light}
-          ref={this.elements[2]}
-        />
-        <div
-          className={topStyles.back + " " + topStyles.back_store}
-          ref={this.elements[1]}
-        />
-        <div
-          className={topStyles.back + " " + topStyles.back_anniversary}
-          ref={this.elements[0]}
-        />
-        <div className={topStyles.mask}>
-          <img src={logo} className={topStyles.logo} alt="" />
-        </div>
-
-        <div className={topStyles.arrow}>
-          <div className={topStyles.scroll}>SCROLL</div>
-          <div className={topStyles.line}></div>
-        </div>
-      </section>
-    );
+    return <section className={topStyles.container}></section>;
   }
 }
