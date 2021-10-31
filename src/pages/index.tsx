@@ -8,17 +8,17 @@ import * as accessStyles from "../css/access.module.css";
 import * as preventionStyles from "../css/prevention.module.css";
 import * as paymentStyles from "../css/payment.module.css";
 import * as footerStyles from "../css/footer.module.css";
-import preventionImg from "../img/prevention.jpg";
 import { Title, Titles } from "../components/title";
 import { MenuTitles, Menu } from "../components/menu";
 import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
 import { Top } from "../components/top";
 import { PhotoView } from "../components/photoView";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Sections, ImageManager } from "../ImageManager";
 import { Images } from "../Image";
+import { v4 as uuidv4 } from "uuid";
+
 export type ImagesWithSections = Record<Sections, Images>;
 export const ImagesContext = React.createContext<ImagesWithSections>(null);
 
@@ -40,7 +40,7 @@ export default class Index extends React.Component<{}, IndexState> {
         about: {},
         footer: {},
         menu: {},
-        payment: {},
+        payments: {},
         prevention: {},
         top: {},
       },
@@ -51,16 +51,14 @@ export default class Index extends React.Component<{}, IndexState> {
     paymentName: string,
     fileName: string
   ): JSX.Element {
-    const path = this.props.data.img.edges.find((element) => {
-      return element.node.name == fileName;
-    });
-    if (path != undefined) {
+    const key = uuidv4();
+    if (this.state.images["payments"][fileName]) {
       return (
-        <div className={paymentStyles.tableRow}>
+        <div className={paymentStyles.tableRow} key={key}>
           <div className={paymentStyles.tableData}>
             <img
               className={paymentStyles.icon}
-              src={path.node.publicURL}
+              src={this.state.images["payments"][fileName].url}
               alt={fileName}
             />
           </div>
@@ -74,7 +72,7 @@ export default class Index extends React.Component<{}, IndexState> {
         </div>
       );
     } else {
-      return <p>Faild to create Element.({paymentName})</p>;
+      return <p key={key}>faild to get image</p>;
     }
   }
 
@@ -118,7 +116,7 @@ export default class Index extends React.Component<{}, IndexState> {
         about: this.imageManager.getImages("about"),
         menu: this.imageManager.getImages("menu"),
         prevention: this.imageManager.getImages("prevention"),
-        payment: this.imageManager.getImages("payment"),
+        payments: this.imageManager.getImages("payments"),
         footer: this.imageManager.getImages("footer"),
       },
     });
@@ -151,9 +149,17 @@ export default class Index extends React.Component<{}, IndexState> {
               <title>peu a peu</title>
             </Helmet>
 
-            <Top images={this.state.images.top} />
+            <Top />
             <section className={aboutStyles.container}>
-              <div className={aboutStyles.img}></div>
+              <div
+                className={aboutStyles.img}
+                style={{
+                  backgroundImage:
+                    "url(" +
+                    this.state.images["about"]["store2.jpg"]?.url +
+                    ")",
+                }}
+              ></div>
               <div className={aboutStyles.tableContainer}>
                 <div className={aboutStyles.rowContainer}>
                   <div className={aboutStyles.introductionContainer}>
@@ -270,6 +276,7 @@ export default class Index extends React.Component<{}, IndexState> {
                   ]}
                 ></Menu>
               </div>
+
               {/* <Menu titile={MenuTitles.OTHERS} datail={[]}></Menu> */}
             </section>
 
@@ -279,79 +286,94 @@ export default class Index extends React.Component<{}, IndexState> {
                 We countermeasure against covid-19.
               </p>
               <img
-                src={preventionImg}
+                src={
+                  this.state.images["all"]["images/others/prevention.jpg"]?.url
+                }
                 alt="Virus Prevention"
                 className={preventionStyles.img}
               />
             </section>
 
             <section className={paymentStyles.container}>
-              <Title title={Titles.PAYMENT}></Title>
-              <p className={paymentStyles.introduction}>
-                You can pay with these methods or cash.
-              </p>
-              <div className={paymentStyles.paymentTable}>
-                {[
-                  this.getPaymentJSXElement("Apple Pay", "Apple Pay"),
+              {Object.keys(this.state.images["payments"]).length > 0 && (
+                <>
+                  <Title title={Titles.PAYMENT}></Title>
+                  <p className={paymentStyles.introduction}>
+                    You can pay with these methods or cash.
+                  </p>
+                  <div className={paymentStyles.paymentTable}>
+                    {[
+                      this.getPaymentJSXElement("Apple Pay", "Apple Pay.png"),
 
-                  this.getPaymentJSXElement("Visa", "visa"),
-                  this.getPaymentJSXElement("Master", "master"),
-                  this.getPaymentJSXElement("JCB", "jcb"),
-                  this.getPaymentJSXElement("Diners", "diners"),
-                  this.getPaymentJSXElement("AMEX", "amex"),
-                  this.getPaymentJSXElement("iD", "id"),
-                  this.getPaymentJSXElement("QUICKPay", "QuickPay"),
-                  this.getPaymentJSXElement("UnionPay", "UnionPay"),
-                  this.getPaymentJSXElement("AliPay", "AliPay"),
-                  this.getPaymentJSXElement("WeChat Pay", "WeChat Pay"),
-                  this.getPaymentJSXElement("d払い", "d払い"),
+                      this.getPaymentJSXElement("Visa", "visa.png"),
+                      this.getPaymentJSXElement("Master", "master.png"),
+                      this.getPaymentJSXElement("JCB", "jcb.png"),
+                      this.getPaymentJSXElement("Diners", "diners.png"),
+                      this.getPaymentJSXElement("AMEX", "amex.png"),
+                      this.getPaymentJSXElement("iD", "id.png"),
+                      this.getPaymentJSXElement("QUICKPay", "quickpay.png"),
+                      this.getPaymentJSXElement("UnionPay", "unionpay.png"),
+                      this.getPaymentJSXElement("AliPay", "alipay.png"),
+                      this.getPaymentJSXElement("WeChat Pay", "WeChat Pay.png"),
+                      this.getPaymentJSXElement("d払い", "d払い.png"),
 
-                  this.getPaymentJSXElement("PayPay", "PayPay"),
-                  this.getPaymentJSXElement("LINE Pay", "LINE Pay"),
-                  this.getPaymentJSXElement("au Pay", "auPay"),
-                ]}
-              </div>
+                      this.getPaymentJSXElement("PayPay", "paypay.png"),
+                      this.getPaymentJSXElement("LINE Pay", "LINE Pay.png"),
+                      this.getPaymentJSXElement("au Pay", "aupay.png"),
+                    ]}
+                  </div>
 
-              <div className={paymentStyles.paymentTablePc}>
-                <div className={paymentStyles.tableDataPc}>
-                  {this.getPaymentJSXElement("Apple Pay", "Apple Pay")}
-                  {this.getPaymentJSXElement("Master", "master")}
-                  {this.getPaymentJSXElement("Diners", "diners")}
-                  {this.getPaymentJSXElement("iD", "id")}
-                  {this.getPaymentJSXElement("UnionPay", "UnionPay")}
-                  {this.getPaymentJSXElement("WeChat Pay", "WeChat Pay")}
-                  {this.getPaymentJSXElement("PayPay", "PayPay")}
-                  {this.getPaymentJSXElement("au Pay", "auPay")}
-                </div>
-                <div className={paymentStyles.tableDataPc}>
-                  {this.getPaymentJSXElement("Visa", "visa")}
-                  {this.getPaymentJSXElement("JCB", "jcb")}
-                  {this.getPaymentJSXElement("AMEX", "amex")}
-                  {this.getPaymentJSXElement("QUICKPay", "QuickPay")}
-                  {this.getPaymentJSXElement("AliPay", "AliPay")}
-                  {this.getPaymentJSXElement("d払い", "d払い")}
-                  {this.getPaymentJSXElement("LINE Pay", "LINE Pay")}
-                </div>
-              </div>
+                  <div className={paymentStyles.paymentTablePc}>
+                    <div className={paymentStyles.tableDataPc}>
+                      {this.getPaymentJSXElement("Apple Pay", "Apple Pay.png")}
+                      {this.getPaymentJSXElement("Master", "master.png")}
+                      {this.getPaymentJSXElement("Diners", "diners.png")}
+                      {this.getPaymentJSXElement("iD", "id.png")}
+                      {this.getPaymentJSXElement("UnionPay", "unionpay.png")}
+                      {this.getPaymentJSXElement(
+                        "WeChat Pay",
+                        "WeChat Pay.png"
+                      )}
+                      {this.getPaymentJSXElement("PayPay", "paypay.png")}
+                      {this.getPaymentJSXElement("au Pay", "aupay.png")}
+                    </div>
+                    <div className={paymentStyles.tableDataPc}>
+                      {this.getPaymentJSXElement("Visa", "visa.png")}
+                      {this.getPaymentJSXElement("JCB", "jcb.png")}
+                      {this.getPaymentJSXElement("AMEX", "amex.png")}
+                      {this.getPaymentJSXElement("QUICKPay", "quickpay.png")}
+                      {this.getPaymentJSXElement("AliPay", "alipay.png")}
+                      {this.getPaymentJSXElement("d払い", "d払い.png")}
+                      {this.getPaymentJSXElement("LINE Pay", "LINE Pay.png")}
+                    </div>
+                  </div>
 
-              <div className={paymentStyles.transContainer}>
-                <p className={paymentStyles.transTitle}>
-                  Prepaid transportation cards
-                </p>
-                <img
-                  src={
-                    this.props.data.img.edges.find((element) => {
-                      return element.node.name == "transportation";
-                    }).node.publicURL
-                  }
-                  className={paymentStyles.transImg}
-                  alt=""
-                />
-              </div>
+                  <div className={paymentStyles.transContainer}>
+                    <p className={paymentStyles.transTitle}>
+                      Prepaid transportation cards
+                    </p>
+                    <img
+                      src={
+                        this.state.images["payments"]["transportation.png"]
+                          ?.url || ""
+                      }
+                      className={paymentStyles.transImg}
+                      alt=""
+                    />
+                  </div>
+                </>
+              )}
             </section>
 
             <section className={footerStyles.container}>
-              <div className={footerStyles.logo}></div>
+              <div
+                className={footerStyles.logo}
+                style={{
+                  backgroundImage:
+                    "url(" +
+                    this.state.images["all"]["images/logoWhite.png"]?.url,
+                }}
+              ></div>
               <p>Copyright © PeuaPeu All Rights Reserved.</p>
             </section>
           </div>

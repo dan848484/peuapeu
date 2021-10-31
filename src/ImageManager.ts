@@ -3,13 +3,13 @@ import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-id
 import { S3Client, ListObjectsCommand } from "@aws-sdk/client-s3";
 import { Images } from "./Image";
 
-type Sections =
+export type Sections =
   | "all"
   | "top"
   | "about"
   | "menu"
   | "prevention"
-  | "payment"
+  | "payments"
   | "footer";
 
 export class ImageManager {

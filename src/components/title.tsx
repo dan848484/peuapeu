@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as styles from "./css/title.module.css";
 import { miniTitle } from "../css/about.module.scss";
+import { ImagesContext } from "../pages/index";
 
 export enum Titles {
   ABOUT,
@@ -14,47 +15,57 @@ interface TitleInterface {
   title: Titles;
 }
 
-export class Title extends React.Component<TitleInterface, {}> {
-  constructor(props: TitleInterface) {
-    super(props);
+export const Title = (props: TitleInterface) => {
+  const images = React.useContext(ImagesContext);
+
+  if (Object.keys(images["all"]).length === 0) {
+    return <p>..loading</p>;
   }
 
-  render(): JSX.Element {
-    let css;
-    let titleAtribute = "";
-    switch (this.props.title) {
-      case Titles.ABOUT:
-        css = styles.about;
-        titleAtribute = "About us";
-        break;
+  let css;
+  let titleAtribute = "";
+  let url = "";
 
-      case Titles.MENUS:
-        css = styles.menus;
-        titleAtribute = "Menus";
-        break;
+  switch (props.title) {
+    case Titles.ABOUT:
+      css = styles.about;
+      titleAtribute = "About us";
+      url = images["about"]["AboutUs.png"]?.url;
+      break;
 
-      case Titles.ACCESS:
-        css = styles.access + " " + miniTitle;
-        titleAtribute = "Access";
-        break;
+    case Titles.MENUS:
+      css = styles.menus;
+      titleAtribute = "Menus";
+      url = images["menu"]["Menus.png"]?.url;
+      break;
 
-      case Titles.PREVENTION:
-        css = styles.prevention;
-        titleAtribute = "Virus Prevention";
-        break;
+    case Titles.ACCESS:
+      css = styles.access + " " + miniTitle;
+      titleAtribute = "Access";
+      url = images["about"]["adress.png"]?.url;
+      break;
 
-      default:
-        css = styles.payment;
-        titleAtribute = "Payment Methods";
-    }
+    case Titles.PREVENTION:
+      css = styles.prevention;
+      titleAtribute = "Virus Prevention";
+      url = images["all"]["images/others/VirusPrevention.png"]?.url;
+      break;
 
-    const title: JSX.Element = (
-      <h2
-        title={titleAtribute}
-        className={(styles.title as string) + " " + css}
-      ></h2>
-    );
-
-    return title;
+    default:
+      css = styles.payment;
+      titleAtribute = "Payment Methods";
+      url = images["payments"]["PaymentMethods.png"]?.url;
   }
-}
+
+  const title: JSX.Element = (
+    <h2
+      title={titleAtribute}
+      className={(styles.title as string) + " " + css}
+      style={{
+        backgroundImage: "url(" + url + ")",
+      }}
+    ></h2>
+  );
+
+  return title;
+};

@@ -9,6 +9,7 @@ export function PhotoView(): React.ReactElement {
   for (let i = 0; i < 3; i++) {
     pages.push(
       <Page
+        key={i}
         images={{
           first: images["about"]["bottoles.jpg"]?.url,
           second: images["about"]["chandelier.jpg"]?.url,

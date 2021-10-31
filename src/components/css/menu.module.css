@@ -6,32 +6,26 @@ h3 {
 
 .cutBackground {
   width: 42px;
-  background-image: url("../../img/cut.png");
 }
 
 .colorBackground {
   width: 63px;
-  background-image: url("../../img/color.png");
 }
 
 .permBackground {
   width: 57px;
-  background-image: url("../../img/perm.png");
 }
 
 .treatmentBackground {
   width: 117px;
-  background-image: url("../../img/treatment.png");
 }
 
 .othersBackground {
   width: 76px;
-  background-image: url("../../img/others.png");
 }
 
 .setBackground {
   width: 36px;
-  background-image: url("../../img/Set.png");
 }
 
 .container {
@@ -44,8 +38,6 @@ h3 {
 
 .table {
   width: 85vw;
-  position: absolute;
-  right: 0px;
 }
 
 .keyName,
