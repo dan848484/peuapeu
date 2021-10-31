@@ -22,83 +22,18 @@ import { Images } from "../Image";
 export type ImagesWithSections = Record<Sections, Images>;
 export const ImagesContext = React.createContext<ImagesWithSections>(null);
 
-interface PropsInterface {
-  data: {
-    img: {
-      edges: {
-        node: {
-          name: string;
-          publicURL: string;
-        };
-      }[];
-    };
-    background: {
-      edges: {
-        node: {
-          name: string;
-          publicURL: string;
-        };
-      }[];
-    };
-    logo: {
-      edges: {
-        node: {
-          name: string;
-          publicURL: string;
-        };
-      }[];
-    };
-  };
-}
-
 interface IndexState {
   images: ImagesWithSections;
 }
 
-export const query = graphql`
-  {
-    img: allFile(filter: { sourceInstanceName: { eq: "img" } }) {
-      edges {
-        node {
-          name
-          publicURL
-        }
-      }
-    }
-
-    background: allFile(filter: { sourceInstanceName: { eq: "background" } }) {
-      edges {
-        node {
-          name
-          publicURL
-        }
-      }
-    }
-    logo: allFile(filter: { sourceInstanceName: { eq: "logo" } }) {
-      edges {
-        node {
-          name
-          publicURL
-        }
-      }
-    }
-  }
-`;
-
-export default class Index extends React.Component<PropsInterface, IndexState> {
+export default class Index extends React.Component<{}, IndexState> {
   isLoaded = false;
   logo = "";
   imageManager: ImageManager = new ImageManager();
 
-  constructor(props: PropsInterface) {
+  constructor(props) {
     super(props);
-    //put logo URL into this.logo from graphQL result.
-    this.props.data.logo.edges.map((item) => {
-      if (item.node.name == "logo") {
-        this.logo = item.node.publicURL;
-        return;
-      }
-    });
+
     this.state = {
       images: {
         all: {},

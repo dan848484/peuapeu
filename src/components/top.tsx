@@ -28,19 +28,32 @@ export const Top = () => {
     }
     const timeline = gsap.timeline({
       repeat: -1,
+      repeatDelay: 1,
+      defaults: {
+        delay: 1,
+        duration: 1,
+      },
     });
 
     timeline
-      .set("#second, #third, #fourth, #fifth", {
+      .set("#second, #third, #fourth, #fifth, #copiedFirst", {
         opacity: 0,
       })
-      .set(
-        "#first",
-        {
-          opacity: 1,
-        },
-        "<"
-      );
+      .to("#second", {
+        opacity: 1,
+      })
+      .to("#third", {
+        opacity: 1,
+      })
+      .to("#fourth", {
+        opacity: 1,
+      })
+      .to("#fifth", {
+        opacity: 1,
+      })
+      .to("#copiedFirst", {
+        opacity: 1,
+      });
   };
   React.useEffect(() => {
     setImages(contextValue);
@@ -90,14 +103,24 @@ export const Top = () => {
             id="fifth"
             className={topStyles.back}
           />
+          <div
+            style={{
+              backgroundImage:
+                "url(" + images["top"]["anniversary.jpg"].url + ")",
+            }}
+            id="copiedFirst"
+            className={topStyles.back}
+          />
         </>
       )}
       <div className={`${topStyles.mask}`}></div>
-      <img
-        src={`${images["all"]["images/logo.png"].url}`}
-        alt=""
-        className={`${topStyles.logo}`}
-      />
+      {isImageExist() && (
+        <img
+          src={`${images["all"]["images/logo.png"].url}`}
+          alt=""
+          className={`${topStyles.logo}`}
+        />
+      )}
     </section>
   );
 };
