@@ -3,7 +3,14 @@ import { fromCognitoIdentityPool } from "@aws-sdk/credential-provider-cognito-id
 import { S3Client, ListObjectsCommand } from "@aws-sdk/client-s3";
 import { Images } from "./Image";
 
-type Section = "top" | "about" | "menu" | "prevention" | "payment" | "footer";
+type Sections =
+  | "all"
+  | "top"
+  | "about"
+  | "menu"
+  | "prevention"
+  | "payment"
+  | "footer";
 
 export class ImageManager {
   private s3: S3Client | null;
@@ -61,20 +68,26 @@ export class ImageManager {
     console.log(this.images);
   }
 
-  getImages(section: Sections): Images | NotLoadedError {
+  getImages(section: Sections): Images {
     if (!this.alreadyLoaded) {
-      return new NotLoadedError("画像がロードされていません。");
+      throw new NotLoadedError("画像がロードされていません。");
     }
     const images: Images = {};
     let isPrevension = false;
     if (section === "prevention") {
       isPrevension = true;
     }
-    for (let key in this.images) {
-      if (section === key.split("/")[1]) {
-        images[key.split("/")[2]] = this.images[key];
+
+    if (section === "all") {
+      Object.assign(images, this.images);
+    } else {
+      for (let key in this.images) {
+        if (section === key.split("/")[1]) {
+          images[key.split("/")[2]] = this.images[key];
+        }
       }
     }
+
     return images;
   }
 }

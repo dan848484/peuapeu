@@ -17,8 +17,10 @@ import { Top } from "../components/top";
 import { PhotoView } from "../components/photoView";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ImageManager } from "../ImageManager";
-import { Image } from "../Image";
+import { Sections, ImageManager } from "../ImageManager";
+import { Images } from "../Image";
+export type ImagesWithSections = Record<Sections, Images>;
+export const ImagesContext = React.createContext<ImagesWithSections>(null);
 
 interface PropsInterface {
   data: {
@@ -49,8 +51,8 @@ interface PropsInterface {
   };
 }
 
-interface StateInterface {
-  imageManager: ImageManager;
+interface IndexState {
+  images: ImagesWithSections;
 }
 
 export const query = graphql`
@@ -83,16 +85,11 @@ export const query = graphql`
   }
 `;
 
-export const ImagesContext = React.createContext<ImageManager>(
-  new ImageManager()
-);
-
-export default class Index extends React.Component<
-  PropsInterface,
-  StateInterface
-> {
+export default class Index extends React.Component<PropsInterface, IndexState> {
   isLoaded = false;
   logo = "";
+  imageManager: ImageManager = new ImageManager();
+
   constructor(props: PropsInterface) {
     super(props);
     //put logo URL into this.logo from graphQL result.
@@ -102,9 +99,16 @@ export default class Index extends React.Component<
         return;
       }
     });
-
     this.state = {
-      imageManager: new ImageManager(),
+      images: {
+        all: {},
+        about: {},
+        footer: {},
+        menu: {},
+        payment: {},
+        prevention: {},
+        top: {},
+      },
     };
   }
 
@@ -170,13 +174,24 @@ export default class Index extends React.Component<
       2800
     );
 
-    await this.state.imageManager.loadAllPhotos();
-    console.log(this.state.imageManager.getImages("about"));
+    await this.imageManager.loadAllPhotos();
+    console.log(this.imageManager.getImages("all"));
+    this.setState({
+      images: {
+        all: this.imageManager.getImages("all"),
+        top: this.imageManager.getImages("top"),
+        about: this.imageManager.getImages("about"),
+        menu: this.imageManager.getImages("menu"),
+        prevention: this.imageManager.getImages("prevention"),
+        payment: this.imageManager.getImages("payment"),
+        footer: this.imageManager.getImages("footer"),
+      },
+    });
   }
 
   render() {
     return (
-      <ImagesContext.Provider value={this.state.imageManager}>
+      <ImagesContext.Provider value={this.state.images}>
         <div>
           <div className={loadingStyles.container}>
             <img src={this.logo} alt="" />
@@ -201,7 +216,7 @@ export default class Index extends React.Component<
               <title>peu a peu</title>
             </Helmet>
 
-            <Top result={this.props.data.background} />
+            <Top images={this.state.images.top} />
             <section className={aboutStyles.container}>
               <div className={aboutStyles.img}></div>
               <div className={aboutStyles.tableContainer}>

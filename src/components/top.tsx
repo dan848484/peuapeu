@@ -3,40 +3,101 @@ import * as topStyles from "../components/css/top.module.css";
 import logo from "../img/logo.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ImagesContext } from "../pages";
+import { ImageManager } from "../ImageManager";
+import { Images } from "../Image";
+import { ImagesContext, ImagesWithSections } from "../pages/index";
 
-export class Top extends React.Component<{}> {
-  static contextType = ImagesContext;
-
-  declare context: React.ContextType<typeof ImagesContext>;
-
-  constructor() {
-    super({});
-    // this.context.get
-  }
-
-  componentDidMount(): void {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: `.${topStyles.container}`,
-          start: "top top",
-          scrub: true,
-          pin: true,
-          end: "+=400",
-        },
-      })
-      .to(`.${topStyles.back}`, {
-        scale: 2,
-        duration: 1,
-        ease: "Power4.out",
-      });
-  }
-  componentWillUnmount(): void {}
-
-  private changeBackground(): void {}
-
-  render() {
-    return <section className={topStyles.container}></section>;
-  }
+interface TopState {
+  images: ImagesWithSections;
 }
+
+export const Top = () => {
+  const [images, setImages] = React.useState<ImagesWithSections>(null);
+  const contextValue = React.useContext(ImagesContext);
+  const isImageExist = () => {
+    //何か画像がロードされていたら画像がロードされているとみなす。
+    if (images && images["top"]["anniversary.jpg"]) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  const changeBackground = () => {
+    if (!isImageExist()) {
+      return;
+    }
+    const timeline = gsap.timeline({
+      repeat: -1,
+    });
+
+    timeline
+      .set("#second, #third, #fourth, #fifth", {
+        opacity: 0,
+      })
+      .set(
+        "#first",
+        {
+          opacity: 1,
+        },
+        "<"
+      );
+  };
+  React.useEffect(() => {
+    setImages(contextValue);
+    changeBackground();
+  });
+
+  return (
+    <section className={`${topStyles.container} `}>
+      {isImageExist() && (
+        <>
+          <div
+            style={{
+              backgroundImage:
+                "url(" + images["top"]["anniversary.jpg"].url + ")",
+            }}
+            id="first"
+            className={topStyles.back}
+          />
+          <div
+            style={{
+              backgroundImage: "url(" + images["top"]["store1.jpg"].url + ")",
+            }}
+            id="second"
+            className={topStyles.back}
+          />
+
+          <div
+            style={{
+              backgroundImage: "url(" + images["top"]["light.jpg"].url + ")",
+            }}
+            id="third"
+            className={topStyles.back}
+          />
+
+          <div
+            style={{
+              backgroundImage: "url(" + images["top"]["grass.jpg"].url + ")",
+            }}
+            id="fourth"
+            className={topStyles.back}
+          />
+
+          <div
+            style={{
+              backgroundImage: "url(" + images["top"]["bike.jpg"]?.url + ")",
+            }}
+            id="fifth"
+            className={topStyles.back}
+          />
+        </>
+      )}
+      <div className={`${topStyles.mask}`}></div>
+      <img
+        src={`${images["all"]["images/logo.png"].url}`}
+        alt=""
+        className={`${topStyles.logo}`}
+      />
+    </section>
+  );
+};
