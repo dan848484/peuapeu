@@ -22,7 +22,6 @@ interface TopStateInterface {
 }
 
 export class Top extends React.Component<TopPropsInterface, TopStateInterface> {
-  static contextType = ImagesContext;
   backgroundURL: string[];
   elements = [
     React.createRef(),
